@@ -33,6 +33,9 @@
               :collect (cond ((stringp s) s)
                              (t `(princ-to-string (cond
                                                     ((null ,s) "")
+                                                    ((listp ,s)
+                                                     (reduce #'(lambda (a b) (concatenate 'string (princ-to-string a) (princ-to-string b)))
+                                                             (loop for e in ,s collect e) :initial-value ""))
                                                     (t ,s)))))))))
 
 (defmacro -> (&body body)

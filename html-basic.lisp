@@ -9,14 +9,12 @@
         (mapcam #'html-arg 2 args)
         (error "HTML-ARG* takes only even number of arguments!"))))
 
-(deftemp one-side-tag (name &optional args)
-  "<" name (when args (eval `(concatenate 'string ,@(apply #'html-arg* args)))) ">")
+(deftemp one-side-tag (name &rest args)
+  "<" name (when args (apply #'html-arg* args)) ">")
 
 (deftemp two-side-tags (name body &optional args)
-  "<" name (when args (eval `(concatenate 'string ,@(apply #'html-arg* args)))) ">"
-  (if (listp body)
-      (reduce #'(lambda (a b) (concatenate 'string a b)) body :initial-value "")
-      body)
+  "<" name (when args (apply #'html-arg* args)) ">"
+  body
   "</" name ">")
 
 (defun html (body &rest args)
