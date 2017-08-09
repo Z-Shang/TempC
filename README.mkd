@@ -1,0 +1,20 @@
+# TempC
+## A Template Combinator Library for Common Lisp
+
+## Example
+
+``` CommonLisp
+(html (->
+    (head
+        (title "Title"))
+    (body
+        (->
+            (div ... "class" "container")
+            (ul '("item 1"
+                  ("item 2" "active" "true")
+                  "item 3")
+                "class" "nav-bar")))))
+```
+
+## License
+GPLv3+
