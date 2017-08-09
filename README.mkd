@@ -16,5 +16,16 @@
                 "class" "nav-bar")))))
 ```
 
+### Or as Codegen
+
+Trivial Example:
+``` CommonLisp
+(deftemp js-var (name val)
+    "var " name "=" val)
+
+(js-var "foo" "bar")
+=> "var foo=bar"
+```
+
 ## License
 GPLv3+
