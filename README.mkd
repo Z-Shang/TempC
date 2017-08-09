@@ -9,11 +9,12 @@
         (title "Title"))
     (body
         (->
-            (div ... "class" "container")
+            (div "..." "class" "container")
             (ul '("item 1"
                   ("item 2" "active" "true")
                   "item 3")
                 "class" "nav-bar")))))
+=> "<html><head><title>Title</title></head><body><div class=\"container\">...</div><ul class=\"nav-bar\"><li>item 1</li><li active=\"true\">item 2</li><li>item 3</li></ul></body></html>"
 ```
 
 ### Or as Codegen
