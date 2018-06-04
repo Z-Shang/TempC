@@ -29,4 +29,4 @@ Trivial Example:
 ```
 
 ## License
-GPLv3+
+AGPLv3+
